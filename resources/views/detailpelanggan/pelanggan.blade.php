@@ -1,12 +1,12 @@
-@extends('layouts.admin')
+@extends('asset_admin.main')
 
 @section('content')
 
 <div class="container-xl px-4 mt-4">
     <hr class="mt-0 mb-4">
-        <div class="row">
+        <div class="row lg-10">
 
-            <div class="col-xl-4">
+            {{-- <div class="col-xl-4">
                 <!-- Profile picture card-->
                 <div class="card mb-4 mb-xl-0">
                     <div class="card-header">Profile Picture</div>
@@ -16,68 +16,68 @@
                         <!-- Profile picture help block-->
                         {{-- <div class="small font-italic text-muted mb-4">JPG or PNG no larger than 5 MB</div>
                         <!-- Profile picture upload button-->
-                        <button class="btn btn-primary" type="button">Upload new image</button> --}}
+                        <button class="btn btn-primary" type="button">Upload new image</button> --}
                     </div>
                 </div>
-            </div>
+            </div> --}}
 
-            <div class="col-xl-8">
+            <div class="col-xl-11 ">
                 <!-- Account details card-->
                 <div class="card mb-7">
-                    <div class="card-header">Account Details</div>
+                    <div class="card-header">Account Details Pelanggan</div>
                     <div class="card-body mt-3">
                         <form>
                             <!-- Form Group (username)-->
                             <div class="mb-3">
-                                <label class="small mb-1" for="pUsername">Username</label>
-                                <p class="form-control">{{ $datapribadi->username }}</p >
+                                <label class="small mb-1" for="pUsername">Username : </label>
+                                {{-- <p class="form-control">{{ $datapelanggan->username }}</p > --}}
                             </div>
                             <!-- Form Row-->
                             <div class="row gx-3 mb-3">
                                 <!-- Form Group (first name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="pFirstName">First name</label>
-                                    <p class="form-control">{{ $datapribadi->firstname }}</p>
+                                    <label class="small mb-1" for="pFirstName">First name :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->firstname }}</p> --}}
                                 </div>
                                 <!-- Form Group (last name)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="pLastName">Last name</label>
-                                    <p class="form-control">{{ $datapribadi->lastname }}</p>
+                                    <label class="small mb-1" for="pLastName">Last name :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->lastname }}</p> --}}
                                 </div>
                             </div>
                             <!-- Form Row        -->
                             <div class="row gx-3 mb-3">                         
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="pBirthday">Tanggal Lahir</label>
-                                    <p class="form-control">{{ $datapribadi->tanggallahir }}</p>
+                                    <label class="small mb-1" for="pBirthday">Tanggal Lahir :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->tanggallahir }}</p> --}}
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1" for="pLocation">Alamat</label>
-                                    <p class="form-control">{{ $datapribadi->alamat }}</p>
+                                    <label class="small mb-1" for="pLocation">Alamat :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->alamat }}</p> --}}
                                 </div>
                             </div>
 
                             <div class="row gx-3 mb-3">                         
                                 <div class="col-md-6">
-                                    <label class="small mb-1">Email</label>
-                                    <p class="form-control">{{ $datapribadi->email }}</p>
+                                    <label class="small mb-1">Email :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->email }}</p> --}}
                                 </div>
                                 <!-- Form Group (location)-->
                                 <div class="col-md-6">
-                                    <label class="small mb-1">Nomor Telepon</label>
-                                    <p class="form-control">{{ $datapribadi->notelpon }}</p>
+                                    <label class="small mb-1">Nomor Telepon :</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->notelpon }}</p> --}}
                                 </div>
                             </div>
-                            <!-- Save changes button-->
-                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateuser">Edit Data Profile</button>
+                            {{-- <!-- Save changes button-->
+                            <button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#updateuser">Edit Data Profile</button> --}}
                         </form>
                     </div>
                 </div>
             </div>
 
             <!-- Modal Buat update data -->
-            <div class="modal fade" id="updateuser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            {{-- <div class="modal fade" id="updateuser" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
                 <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -126,7 +126,7 @@
                     </div>
                 </div>
                 </div>
-            </div>
+            </div> --}}
 
         </div>
 </div>

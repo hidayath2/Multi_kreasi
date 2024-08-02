@@ -1,11 +1,10 @@
-@extends('layouts.admin')
+@extends('asset_admin.main')
 
 @section('content')
 <div class="container-xxl flex-grow-2 container-p-y">
     {{-- <div class="row"> --}}
         <table id="example" class="table table-striped" style="width:100%">
         <thead>
-            @foreach ($datapelanggan as $user)
             <tr>
                 <th>Nama</th>
                 <th>Alamat</th>
@@ -15,6 +14,7 @@
             </tr>
         </thead>
         <tbody>
+            @foreach ($datapelanggan as $user)
             <tr>
                 <td>{{ $user->username }}</td>
                 <td>{{ $user->alamat }}</td>
@@ -22,10 +22,10 @@
                 <td>{{ $user->email }}</td>
 
                 <td>
-                     <button href="/pelanggan" type="button" class="btn btn-info">
-                         {{-- <i class="bi bi-eye-fill"></i>  --}}lihat
-                          {{-- Lihat{{ route('pelanggan.show', $pelanggan->id) }}   --}}
-                    </button> 
+                    <a href="/detailpelanggan" class="btn btn-info">
+                        {{-- <i class="bi bi-eye">Lihat</i> --}}
+                        Lihat
+                    </a>
 
                     {{-- <button data-id="{{ $user->id }}" type="button" class="btn_detail btn btn-warning" data-toggle="modal" data-target="#lihatdata">Lihat</button> --}}
                 </td>

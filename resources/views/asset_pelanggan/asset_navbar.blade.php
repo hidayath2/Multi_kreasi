@@ -1,5 +1,5 @@
 <!-- Favicon -->
-<link rel="icon" type="image/x-icon" href="img/favicon/favicon.ico" />
+<link rel="icon" type="{{asset('image/x-icon') }}" href="img/favicon/favicon.ico" />
 
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -10,33 +10,28 @@
 />
 
 <!-- Icons. Uncomment required icon fonts -->
-{{-- <link rel="stylesheet" href="{{asset('css/boxicons.css') }}" /> --}}
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
 <!-- Core CSS -->
-<link rel="stylesheet" href="css/core.css" class="template-customizer-core-css" />
-<link rel="stylesheet" href="css/theme-default.css" class="template-customizer-theme-css" />
-<link rel="stylesheet" href="css/demo.css" />
-
-{{-- profil --}}
-<link rel="stylesheet" href="css/profil.css" />
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-
-
+<link rel="stylesheet" href="{{asset('css/core.css') }}" class="template-customizer-core-css" />
+<link rel="stylesheet" href="{{asset('css/theme-default.css') }}" class="template-customizer-theme-css" />
+<link rel="stylesheet" href="{{asset('css/demo.css') }}" />
 
 <!-- Vendors CSS -->
-<link rel="stylesheet" href="js/perfect-scrollbar.css" />
+<link rel="stylesheet" href="{{asset('js/perfect-scrollbar.css') }}" />
 
-<link rel="stylesheet" href="js/apex-charts.css" />
-
-
+<link rel="stylesheet" href="{{asset('js/apex-charts.css') }}" />
 
 <!-- Helpers -->
-<script src="js/helpers.js"></script>
-<script src="js/config.js"></script>
+<script src="{{asset('js/helpers.js') }}"></script>
+<script src="{{asset('js/config.js') }}"></script>
 
 {{-- datataBle --}}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.3.0/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.datatables.net/2.0.8/css/dataTables.bootstrap5.css">
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+{{-- Profile --}}
+<link rel="stylesheet" href="{{asset('css/profil.css') }}" />

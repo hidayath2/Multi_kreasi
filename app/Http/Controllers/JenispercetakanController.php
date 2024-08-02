@@ -27,7 +27,7 @@ class JenispercetakanController extends Controller
      */
     public function create()
     {
-        // return view('halamanadmin.jenispercetakan');
+        return view('halamanadmin.jenispercetakan');
     }
 
     /**
@@ -45,12 +45,6 @@ class JenispercetakanController extends Controller
             'hargasatuan' => 'required',
             'satuan' => 'required'
         ]);
-        // if($request->file('image')){
-        //     // $validateData['image'] = $request->file('image')->store('gambar-proyek');
-        //     $request->file('image')->store('public/gambar-perangkat');
-        //     $validateData['image'] = $request->file('image')->hashName();
-        // }
-        // $validateData['password'] = Hash::make($validateData['password']);
 
         Jenispercetakan::create($validateData);
 
@@ -76,7 +70,12 @@ class JenispercetakanController extends Controller
      */
     public function edit($id)
     {
-        //
+        $datapercetakan=Jenispercetakan::findOrFail($id);
+
+        return view('editpercetakan.jenispercetakan', [
+            "title" => "jenispercetakan",
+            'jenispercetakan' => $datapercetakan
+        ]);
     }
 
     /**
@@ -88,7 +87,20 @@ class JenispercetakanController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        // dd($request);
+        // $datapercetakan=Jenispercetakan::findOrFail($id);
+        $validateData = $request->validate([
+            'namabarang' => 'required',
+            'hargasatuan' => 'required',
+            'satuan' => 'required'
+        ]);
+        
+        // $validateData = $request->validate($validateData);
+
+        Jenispercetakan::where('id', $id)
+                    ->update($validateData);
+
+        return redirect('/jenispercetakan')->with('succes', 'data berhasil di Update');
     }
 
     /**

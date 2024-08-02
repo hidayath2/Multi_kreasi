@@ -1,21 +1,21 @@
 <!-- Core JS -->
     <!-- build:js assets/vendor/js/core.js -->
-    <script src="js/jquery.js"></script>
-    <script src="js/popper.js"></script>
-    <script src="js/bootstrap.js"></script>
-    <script src="js/perfect-scrollbar.js"></script>
+    <script src="{{asset('js/jquery.js') }}"></script>
+    <script src="{{asset('js/popper.js') }}"></script>
+    <script src="{{asset('js/bootstrap.js') }}"></script>
+    <script src="{{asset('js/perfect-scrollbar.js') }}"></script>
 
-    <script src="js/menu.js"></script>
+    <script src="{{asset('js/menu.js') }}"></script>
     <!-- endbuild -->
 
     <!-- Vendors JS -->
-    <script src="js/apexcharts.js"></script>
+    <script src="{{asset('js/apexcharts.js') }}"></script>
 
     <!-- Main JS -->
-    <script src="js/main.js"></script>
+    <script src="{{asset('js/main.js') }}js/main.js"></script>
 
     <!-- Page JS -->
-    <script src="js/dashboards-analytics.js"></script>
+    <script src="{{asset('js/dashboards-analytics.js') }}"></script>
 
     <!-- Place this tag in your head or just before your close body tag. -->
     <script async defer src="https://buttons.github.io/buttons.js"></script>

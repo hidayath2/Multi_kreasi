@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\User;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
@@ -62,7 +63,7 @@ class UserController extends Controller
      */
     public function show($id)
     {
-        $daftaruser = User::findOrFail($id);
+        $datapribadi = User::findOrFail($id);
 
         return view('detailpelanggan.pelanggan', compact('daftarpelanggan'));
     }
@@ -75,11 +76,11 @@ class UserController extends Controller
      */
     public function edit($id)
     {
-        $datauser=User::findOrFail($id);
+        $datapribadi=User::findOrFail($id);
 
         return view('edituser.user', [
             "title" => "user",
-            'user' => $datauser
+            'datapribadi' => $datapribadi
         ]);
     }
 
@@ -92,7 +93,7 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $daftaruser=User::findOrFail($id);
+        $datapribadi=User::findOrFail($id);
         $validateData = $request->validate([
             'username' => 'required',
             'firstname' => 'required',
@@ -103,6 +104,8 @@ class UserController extends Controller
             'notelpon' => 'required',
             'password' => 'required'
         ]);
+
+        $validateData['password'] = Hash::make($validateData['password']);
 
         User::where('id', $id)
                     ->update($validateData);

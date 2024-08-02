@@ -1,4 +1,4 @@
-@extends('layouts.admin')
+@extends('asset_admin.main')
 
 @section('content')
 
@@ -41,9 +41,10 @@
                         <td>{{ $percetakan->satuan }}</td>
                         <td>{{ $percetakan->hargasatuan }}</td>
                         <td>
-                            <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#updatedata">
+                            
+                            <a href="{{ route('jenispercetakan.edit', $percetakan->id) }}" type="button" class="btn btn-warning" >
                                 <i class="bi bi-pencil-fill"></i> 
-                            </button>
+                            </a>
 
                             <form action="{{ route('jenispercetakan.destroy',  $percetakan->id ) }}" method="post" class="d-inline">
                                 @method('delete')

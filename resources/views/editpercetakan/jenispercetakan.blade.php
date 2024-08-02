@@ -1,62 +1,45 @@
-@extends('asset_pelanggan.main')
+@extends('asset_admin.main')
 
 @section('content')
 
 <div class="container-xl px-4 mt-4">
     <hr class="mt-0 mb-4">
         <div class="row">
+
+
             <div class="col-xl-15">
                 <!-- Account details card-->
                 <div class="card mb-7">
                     <div class="card-header">Account Details</div>
                     <div class="card-body mt-3">
-                        <form>
+                        <form method="post" action="{{ route('jenispercetakan.update', $jenispercetakan->id) }}" enctype="multipart/form-data">
+                            @method('put')
+                            @csrf
+                            <div class=" col-lg-7 mb-3">
                             <!-- Form Group (username)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="pUsername">Username</label>
-                                <p class="form-control">{{ $datapribadi->username }}</p >
-                            </div>
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-3">
-                                <!-- Form Group (first name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="pFirstName">First name</label>
-                                    <p class="form-control">{{ $datapribadi->firstname }}</p>
+                                <div class="mb-3">
+                                    <label class="small mb-1" for="namabarang">Nama Barang</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->namabarang }}</p > --}}
+                                    <input type="text" class="form-control" name="namabarang" id="namabarang" autofocus value="{{ old('namabarang', $jenispercetakan->namabarang) }}">
                                 </div>
-                                <!-- Form Group (last name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="pLastName">Last name</label>
-                                    <p class="form-control">{{ $datapribadi->lastname }}</p>
+                                <div class="mb-">
+                                    <label class="small mb-1" for="satuan">Satuan</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->satuan }}</p> --}}
+                                <input type="text" class="form-control" name="satuan" id="satuan" autofocus value="{{ old('satuan', $jenispercetakan->satuan) }}">
                                 </div>
-                            </div>
-                            <!-- Form Row        -->
-                            <div class="row gx-3 mb-3">                         
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="birthday">Tanggal Lahir</label>
-                                    <p class="form-control">{{ $datapribadi->tanggallahir }}</p>
+                                <div class="mb-">
+                                    <label class="small mb-1" for="hagasatuan">Harga Satuan</label>
+                                    {{-- <p class="form-control">{{ $datapribadi->hagasatuan }}</p> --}}
+                                <input type="text" class="form-control" name="hagasatuan" id="hagasatuan" autofocus value="{{ old('hagasatuan', $jenispercetakan->hargasatuan) }}">
                                 </div>
-                                <!-- Form Group (location)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="alamat">Alamat</label>
-                                    <p class="form-control">{{ $datapribadi->alamat }}</p>
-                                </div>
-                            </div>
-
-                            <div class="row gx-3 mb-3">                         
-                                <div class="col-md-6">
-                                    <label class="small mb-1">Email</label>
-                                    <p class="form-control">{{ $datapribadi->email }}</p>
-                                </div>
-                                <!-- Form Group (location)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1">Nomor Telepon</label>
-                                    <p class="form-control">{{ $datapribadi->notelpon }}</p>
-                                </div>
+                            
                             </div>
                             <!-- Save changes button-->
-                            <a href="{{ route('user.edit', $datapribadi->id) }}"  class="btn btn-primary">
-                                <i class="bi bi-pencil-fill"></i> 
-                            </a>
+                            {{-- <a href="/halamanpelanggan/edituser"  class="btn btn-primary"> --}}
+                            <button type="submit"  class="btn btn-primary ">
+                                {{-- <i class="bi bi-pencil-fill"></i>  --}}
+                                Update
+                            </button>
                         </form>
                     </div>
                 </div>

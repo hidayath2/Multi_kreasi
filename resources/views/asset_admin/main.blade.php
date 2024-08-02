@@ -12,7 +12,7 @@
 
     <meta name="description" content="" />
 
-    @include('pelanggan.asset_navbar')
+    @include('asset_admin.asset_navbar')
 
   </head>
 
@@ -21,7 +21,7 @@
     <div class="layout-wrapper layout-content-navbar">
         <div class="layout-container">
           <!-- Menu -->
-          @include('pelanggan.sidebar')
+          @include('asset_admin.sidebar')
           <!-- / Menu -->
           
           <!-- Layout container -->
@@ -29,7 +29,7 @@
             
             
             <!-- Navbar -->
-            @include('pelanggan.navbar')
+            @include('asset_admin.navbar')
             <!-- / Navbar -->
 
             <!-- Content wrapper -->
@@ -54,7 +54,7 @@
     </div>
     <!-- / Layout wrapper -->
 
-    @include('pelanggan.asset_footer')
+    @include('asset_admin.asset_footer')
 
   </body>
 </html>

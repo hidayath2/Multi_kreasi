@@ -43,6 +43,11 @@ Route::get('/admin', function () {
         "title" => "admin"
     ]);
 });
+Route::get('/detailpelanggan', function () {
+    return view('detailpelanggan.pelanggan', [
+        "title" => "pelanggan"
+    ]);
+});
 
 // halaman login
 route::get('/', [LoginController::class, 'index'])->name('login');
@@ -59,18 +64,19 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/forgotpass', function () {
     return view('auth/forgot_pass');
 });
-Route::get('/edituser', function () {
-    return view('halamanpelanggan/edituser');
-});
+// Route::get('/edituser', function () {
+//     return view('halamanpelanggan/edituser');
+// });
 
 // halaman pelanggan
 Route::resource('/pemesanan', PemesananController::class)->middleware('auth');
-// Route::post('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
-
-
-// halaman user pelanggan
 Route::resource('/user', UserController::class)->middleware('auth');
-Route::get('/pelanggan', [UserController::class, 'pelanggan']);
-
+// Route::post('/pemesanan', [PemesananController::class, 'store'])->name('pemesanan.store');
 // Route::put('datapribadi/{id}', [UserController::class, 'update'])->name('user.update');
 // Route::get('datapribadi/{id}', [UserController::class, 'edit'])->name('user.edit');
+
+
+// halaman admin pelanggan
+Route::get('/pelanggan', [UserController::class, 'pelanggan']);
+// Route::get('/detailpelanggan', [UserController::class, 'show']);
+
